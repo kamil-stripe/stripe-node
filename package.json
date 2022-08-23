@@ -20,6 +20,9 @@
     "type": "git",
     "url": "https://github.com/kamil-stripe/stripe-node.git"
   },
+  "publishConfig": {
+    "@kamil-dev:registry": "https://npm.pkg.github.com"
+  },
   "bugs": "https://github.com/stripe/stripe-node/issues",
   "engines": {
     "node": "^8.1 || >=10.*"
