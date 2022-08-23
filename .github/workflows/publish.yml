@@ -37,7 +37,7 @@ jobs:
         run: yarn && yarn lint
 
       - name: Debug
-        run: echo $(cat .npmrc)
+        run: echo $(cat $NPM_CONFIG_USERCONFIG)
 
       - run: npm publish
         env:
