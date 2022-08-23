@@ -2,8 +2,6 @@ name: Publish package to GitHub Packages
 on:
   workflow_dispatch: {}
   push:
-    branches:
-      - master
     tags:
       - v[0-9]+.[0-9]+.[0-9]+*
 jobs:
@@ -14,7 +12,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to GitHub Packages
+      # Setup NPM_CONFIG_USERCONFIG (not .npmrc) to publish to GitHub Packages
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
@@ -35,9 +33,6 @@ jobs:
 
       - name: Lint
         run: yarn && yarn lint
-
-      - name: Debug
-        run: echo $(cat $NPM_CONFIG_USERCONFIG)
 
       - run: npm publish
         env:
