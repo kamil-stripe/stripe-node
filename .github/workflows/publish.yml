@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          scope: 'kamil-dev'
+          scope: '@kamil-stripe'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -32,9 +32,6 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
-      - name: Node check
-        run: find . -name "*.js" -type f -not -path "./node_modules/*" -not -path "./\.*" -exec node --check {} \;
 
       - name: Lint
         run: yarn && yarn lint
