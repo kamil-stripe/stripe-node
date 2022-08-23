@@ -1,6 +1,6 @@
 {
-  "name": "stripe",
-  "version": "10.3.0",
+  "name": "@kamil-stripe/stripe",
+  "version": "0.0.1",
   "description": "Stripe API wrapper",
   "keywords": [
     "stripe",
