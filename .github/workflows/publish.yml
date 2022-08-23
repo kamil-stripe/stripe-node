@@ -36,6 +36,9 @@ jobs:
       - name: Lint
         run: yarn && yarn lint
 
+      - name: Debug
+        run: echo $(cat .npmrc)
+
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
